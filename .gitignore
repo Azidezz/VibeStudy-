@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+memory.json
+
+sshkeygithub
+sshkeygithub.pub
+
+*.pem
+*.key
