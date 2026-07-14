@@ -1,0 +1,5 @@
+run the "Setup" file if yo're installing for the first time
+after it's done close everything it opened and run the "open VibeStudy" folder
+it is not needed ot reopen the setup everytime unless you're reinstalling the program
+gl, have fun!
+dm if any qs

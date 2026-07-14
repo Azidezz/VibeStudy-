@@ -1,0 +1,4 @@
+﻿ollama
+pypdf
+kivy
+plyer

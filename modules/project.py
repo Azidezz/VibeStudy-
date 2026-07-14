@@ -1,18 +1,17 @@
-from ollama import chat
+from core.prompts import build_system_prompt
 
 def handle(topic, memory):
+    try:
+        from ollama import chat
+    except ImportError as exc:
+        raise RuntimeError("The ollama Python package is not installed. Install it with: pip install ollama") from exc
 
     response = chat(
-        model="vibestudy:latest",
+        model=memory.get("settings", {}).get("model", "gemma2:2b"),
         messages=[
             {
                 "role": "system",
-                "content": f"""
-You are VibeStudy.
-
-User Memory:
-{memory}
-
+                "content": build_system_prompt(memory, mode="""
 Generate an innovative STEM project.
 
 Include:
@@ -22,7 +21,7 @@ Include:
 - Procedure
 - Scientific Principle
 - Applications
-"""
+""")
             },
             {
                 "role": "user",
